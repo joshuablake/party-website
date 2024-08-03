@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Party Drinks Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family:cursive;
+            background-color: #f9f9f9;
+            color: #000000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #9D2235; /* Jesus College red */
+            color: #f9f9f9;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+        .menu-section {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .menu-section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #9D2235; /* Jesus College red */
+            border-bottom: 2px solid #9D2235;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+        .drink {
+            margin-bottom: 20px;
+        }
+        .drink-name {
+            font-weight: bold;
+            font-size: 1.8em;
+            color: #000000;
+        }
+        .drink-description {
+            font-style: italic;
+            color: #333333;
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 10px;
+            }
+            .drink-name {
+                font-size: 1.5em;
+            }
+            .drink-description {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Farewell Cambridge</h1>
+        <p>Drinks menu</p>
+    </header>
+    <div class="container">
+        <div class="menu-section">
+            <h2>Alcoholic</h2>
+            <div class="drink">
+                <div class="drink-name">Wine</div>
+                <div class="drink-description">Red on the table, white (including prosseco) in the fridge</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Spirits</div>
+                <div class="drink-description">Help yourself, see below for mixers</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Liquers</div>
+                <div class="drink-description">Baileys or Kahlua</div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Soft / mixers</h2>
+            <div class="drink">
+                <div class="drink-name">Diet Coke</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Soda water</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Tonic water</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Lemonade</div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Mocktails</h2>
+            <div class="drink">
+                <div class="drink-name">Virgin Mojito</div>
+                <div class="drink-description">Muddled mint, lime juice, sugar, and soda water</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Sparkling Pomegranate Punch</div>
+                <div class="drink-description">Pomegranate juice, sparkling water, and fresh berries</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
