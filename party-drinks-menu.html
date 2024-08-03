@@ -52,6 +52,13 @@
         .drink {
             margin-bottom: 20px;
         }
+        .clickable-drink-name {
+            font-weight: bold;
+            font-size: 1.8em;
+            color: #007BFF;
+            text-decoration: underline;
+            cursor: pointer;
+        }
         .drink-name {
             font-weight: bold;
             font-size: 1.8em;
@@ -61,6 +68,40 @@
             font-style: italic;
             color: #333333;
             font-size: 1.2em;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
         @media (max-width: 600px) {
             h1 {
@@ -72,11 +113,24 @@
             .container {
                 padding: 10px;
             }
-            .drink-name {
+            .drink-name, .clickable-drink-name {
                 font-size: 1.5em;
             }
             .drink-description {
                 font-size: 1em;
+            }
+            .modal-content {
+                width: 90%;
+                padding: 10px;
+            }
+            .modal-content h2 {
+                font-size: 1.5em;
+            }
+            .modal-content p {
+                font-size: 1em;
+            }
+            .close {
+                font-size: 24px;
             }
         }
     </style>
@@ -122,19 +176,61 @@
 
         <div class="menu-section">
             <h2>Mocktails</h2>
-            <div class="drink">
-                <div class="drink-name">Shirley Temple</div>
+        <p>Click for recipes</p>
+            <div class="drink" onclick="openModal('shirley-temple')">
+                <div class="clickable-drink-name">Shirley Temple</div>
                 <div class="drink-description">Grenadine and soda water</div>
             </div>
-            <div class="drink">
-                <div class="drink-name">Lemon lime cooler</div>
+            <div class="drink" onclick="openModal('lemon-lime-cooler')">
+                <div class="clickable-drink-name">Lemon lime cooler</div>
                 <div class="drink-description">Lemon juice, lime juice, sugar syrup, soda water</div>
             </div>
-            <div class="drink">
-                <div class="drink-name">Orgeat lemonade</div>
+            <div class="drink" onclick="openModal('orgeat-lemonade')">
+                <div class="clickable-drink-name">Orgeat lemonade</div>
                 <div class="drink-description">Lemon juice, orgeat, lemonade</div>
             </div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalText"></div>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to open the modal with the appropriate content
+        function openModal(drink) {
+            var modalText = document.getElementById("modalText");
+            if (drink === 'shirley-temple') {
+                modalText.innerHTML = "<h2>Shirley Temple</h2><p>Ingredients: <br> - 15 ml Grenadine <br> - 150 ml Soda water</p><p>Instructions: Mix grenadine with soda water. Serve over ice.</p>";
+            } else if (drink === 'lemon-lime-cooler') {
+                modalText.innerHTML = "<h2>Lemon Lime Cooler</h2><p>Ingredients: <br> - 30 ml Lemon juice <br> - 30 ml Lime juice <br> - 15 ml Sugar syrup <br> - 120 ml Soda water</p><p>Instructions: Mix lemon juice, lime juice, and sugar syrup. Top with soda water. Serve over ice.</p>";
+            } else if (drink === 'orgeat-lemonade') {
+                modalText.innerHTML = "<h2>Orgeat Lemonade</h2><p>Ingredients: <br> - 30 ml Lemon juice <br> - 15 ml Orgeat <br> - 120 ml Lemonade</p><p>Instructions: Mix lemon juice and orgeat. Top with lemonade. Serve over ice.</p>";
+            }
+            modal.style.display = "block";
+        }
+    </script>
 </body>
 </html>
