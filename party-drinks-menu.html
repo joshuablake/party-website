@@ -19,6 +19,9 @@
             margin: 0 auto;
             padding: 20px;
         }
+        header a {
+            color: #f9f9f9;
+        }
         header {
             text-align: center;
             padding: 40px 0;
@@ -132,7 +135,19 @@
 <body>
     <header>
         <h1>Farewell Cambridge</h1>
-        <p>Drinks menu</p>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="#cocktails">Cocktails</a>
+            <a href="#long-cocktail">Long cocktails</a>
+            <a href="#mocktails">Mocktails</a>
+            <a href="#wine">Wine</a>
+            <a href="#other">Other alcoholic</a>
+            <a href="#soft">Soft / mixers</a>
+        </nav>
     </header>
     <div class="container">
         <div class="menu-section">
@@ -210,7 +225,7 @@
             </div>
         </div>
         <div class="menu-section">
-            <h2 id="other">Other alcohol</h2>
+            <h2 id="other">Other alcoholic</h2>
             <div class="drink">
                 <div class="drink-name">A selection of spirits</div>
                 <div class="drink-description">Mixers listed below</div>
@@ -244,6 +259,12 @@
 
 
     </div>
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('show');
+        }
+    </script>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
