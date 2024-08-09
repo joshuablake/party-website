@@ -61,13 +61,13 @@
         }
         .drink-name {
             font-weight: bold;
-            font-size: 1.8em;
+            font-size: 1.4em;
             color: #000000;
         }
         .drink-description {
             font-style: italic;
             color: #333333;
-            font-size: 1.2em;
+            font-size: 1em;
         }
         /* Modal Styles */
         .modal {
@@ -103,7 +103,7 @@
             text-decoration: none;
             cursor: pointer;
         }
-        @media (max-width: 600px) {
+        /* @media (max-width: 600px) {
             h1 {
                 font-size: 2.5em;
             }
@@ -112,12 +112,6 @@
             }
             .container {
                 padding: 10px;
-            }
-            .drink-name, .clickable-drink-name {
-                font-size: 1.5em;
-            }
-            .drink-description {
-                font-size: 1em;
             }
             .modal-content {
                 width: 90%;
@@ -132,7 +126,7 @@
             .close {
                 font-size: 24px;
             }
-        }
+        } */
     </style>
 </head>
 <body>
@@ -142,18 +136,92 @@
     </header>
     <div class="container">
         <div class="menu-section">
-            <h2>Alcoholic</h2>
+            <h2>Cocktails</h2>
+            <p>Click for recipes. Many variations available, ask Josh or Hena, or check the book for more.</p>
+            <div class="drink" onclick="openModal('whiskey-sour')">
+                <div class="clickable-drink-name">Whiskey sour</div>
+                <div class="drink-description">A classic cocktail, with bourbon whiskey toned down by sweetness and citrus; optionally, include egg white for a richer and smoother option</div>
+            </div>
+            <div class="drink" onclick="openModal('bees-knees')">
+                <div class="clickable-drink-name">Bees' knees</div>
+                <div class="drink-description">A crowd favourite, brings out the taste of smooth honey sweetness </div>
+            </div>
+            <div class="drink" onclick="openModal('fancy-cocktail')">
+                <div class="clickable-drink-name">Fancy cocktail</div>
+                <div class="drink-description">A strong,  rich, floral combination</div>
+            </div>
+            <div class="drink" onclick="openModal('daiquiri')">
+                <div class="clickable-drink-name">Daiquiri</div>
+                <div class="drink-description">Simple, sour, and strong</div>
+            </div>
+            <div class="drink" onclick="openModal('baby-guinness')">
+                <div class="clickable-drink-name">Baby Guinness</div>
+                <div class="drink-description">Creamy, rich, coffee</div>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Long cocktails</h2>
+            <p>Cocktails above have a bit too much bite? Enjoy a longer drink here.</p>
+            <div class="drink" onclick="openModal('french75')">
+                <div class="clickable-drink-name">French 75</div>
+                <div class="drink-description">Bubbly and fun</div>
+            </div>
+            <div class="drink" onclick="openModal('gin-rickey')">
+                <div class="clickable-drink-name">Gin rickey</div>
+                <div class="drink-description">A cooling and refreshing combination</div>
+            </div>
+            <div class="drink" onclick="openModal('mojito')">
+                <div class="clickable-drink-name">Mojito</div>
+                <div class="drink-description">Minty and cooling</div>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Mocktails</h2>
+            <p>Click for recipes</p>
+            <div class="drink" onclick="openModal('shirley-temple')">
+                <div class="clickable-drink-name">Shirley Temple</div>
+                <div class="drink-description">Grenadine and lemonade</div>
+            </div>
+            <div class="drink" onclick="openModal('lemon-lime-cooler')">
+                <div class="clickable-drink-name">Lemon lime cooler</div>
+                <div class="drink-description">Lemon juice, lime juice, sugar syrup, soda water</div>
+            </div>
+            <div class="drink" onclick="openModal('orgeat-lemonade')">
+                <div class="clickable-drink-name">Orgeat lemonade</div>
+                <div class="drink-description">Lemon juice, orgeat (almond syrup), lemonade</div>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Wine</h2>
             <div class="drink">
-                <div class="drink-name">Wine</div>
-                <div class="drink-description">Red (including port) on the table, white (including Prosecco) in the fridge</div>
+                <div class="drink-name">Red</div>
+                <div class="drink-description">Limited supply</div>
             </div>
             <div class="drink">
-                <div class="drink-name">Spirits</div>
-                <div class="drink-description">Help yourself, see below for mixers</div>
+                <div class="drink-name">Port</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">White</div>
+                <div class="drink-description">Check the fridge</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Prosecco</div>
+                <div class="drink-description">Check the fridge</div>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Other alcohol</h2>
+            <div class="drink">
+                <div class="drink-name">A selection of spirits</div>
+                <div class="drink-description">Mixers listed below</div>
             </div>
             <div class="drink">
                 <div class="drink-name">Liquers</div>
                 <div class="drink-description">Baileys or Kahlua</div>
+            </div>
+            <div class="drink">
+                <div class="drink-name">Beer</div>
+                <div class="drink-description">Check the fridge</div>
             </div>
         </div>
 
@@ -174,22 +242,7 @@
             </div>
         </div>
 
-        <div class="menu-section">
-            <h2>Mocktails</h2>
-        <p>Click for recipes</p>
-            <div class="drink" onclick="openModal('shirley-temple')">
-                <div class="clickable-drink-name">Shirley Temple</div>
-                <div class="drink-description">Grenadine and soda water</div>
-            </div>
-            <div class="drink" onclick="openModal('lemon-lime-cooler')">
-                <div class="clickable-drink-name">Lemon lime cooler</div>
-                <div class="drink-description">Lemon juice, lime juice, sugar syrup, soda water</div>
-            </div>
-            <div class="drink" onclick="openModal('orgeat-lemonade')">
-                <div class="clickable-drink-name">Orgeat lemonade</div>
-                <div class="drink-description">Lemon juice, orgeat, lemonade</div>
-            </div>
-        </div>
+
     </div>
 
     <!-- The Modal -->
@@ -223,11 +276,29 @@
         function openModal(drink) {
             var modalText = document.getElementById("modalText");
             if (drink === 'shirley-temple') {
-                modalText.innerHTML = "<h2>Shirley Temple</h2><p>Ingredients: <br> - 15 ml Grenadine <br> - 150 ml Soda water</p><p>Instructions: Mix grenadine with soda water. Serve over ice.</p>";
+                modalText.innerHTML = "<h2>Shirley Temple</h2><p>Add 15ml grenadine to a glass of lemonade water and ice. Mix and serve.</p>";
             } else if (drink === 'lemon-lime-cooler') {
-                modalText.innerHTML = "<h2>Lemon Lime Cooler</h2><p>Ingredients: <br> - 30 ml Lemon juice <br> - 30 ml Lime juice <br> - 15 ml Sugar syrup <br> - 120 ml Soda water</p><p>Instructions: Mix lemon juice, lime juice, and sugar syrup. Top with soda water. Serve over ice.</p>";
+                modalText.innerHTML = "<h2>Lemon lime cooler</h2><p>Add 15ml lemon juice, 15ml lime juice, and 15ml simple syrup to a glass of soda water and ice. Mix and serve.</p>";
             } else if (drink === 'orgeat-lemonade') {
-                modalText.innerHTML = "<h2>Orgeat Lemonade</h2><p>Ingredients: <br> - 30 ml Lemon juice <br> - 15 ml Orgeat <br> - 120 ml Lemonade</p><p>Instructions: Mix lemon juice and orgeat. Top with lemonade. Serve over ice.</p>";
+                modalText.innerHTML = "<h2>Orgeat lemonade</h2><p>Add 30ml lemon juice and 15ml orgeat to a glass of lemonade and ice. Mix and serve.</p>";
+            } else if (drink === 'whiskey-sour') {
+                modalText.innerHTML = "<h2>Whiskey sour</h2><p>To the shaker, add 15ml demerara syrup, 22.5ml lemon juice, 60ml boubon. If using egg white, add one egg white now and 'dry shake' for a few seconds to aerate the egg. In either case, now add ice and shake until all cold (around 30s). Strain into a glass with ice. Please remember to rinse everything after use.</p>";
+            } else if (drink === 'bees-knees') {
+                modalText.innerHTML = "<h2>Bees' knees</h2><p>To the shaker, add 22.5ml honey syrup, 22.5ml lemon juice, 60ml gin, and ice. Shake until all cold (around 30s). Strain into a glass with ice. Please remember to rinse everything after use.</p>";
+            } else if (drink === 'fancy-cocktail') {
+                modalText.innerHTML = "<h2>Fancy cocktail</h2><p>To a glass, add a barspoon of demerara syrup, 7.5ml orange liqueur (rinsing the spoon into the glass as you poor it), 45ml bourbon, two dashes Angostura bitter, and ice. Mix and serve.</p>";
+            } else if (drink === 'daiquiri') {
+                modalText.innerHTML = "<h2>Daiquiri</h2><p>To the shaker, add 15ml simple syrup, 22.5ml lime juice, and 60ml rum. Shake until all cold (around 30s). Strain into a glass with ice. Please remember to rinse everything after use.</p>";
+            } else if (drink === 'baby-guinness') {
+                modalText.innerHTML = "<h2>Baby Guinness</h2><p>Fill a shot glass two-thirds full of Kahlua. Fill the glass by slowly pouring Baileys over the back of a spoon so that it floats on top. Serve immediately.</p>";
+            } else if (drink === 'french75') {
+                modalText.innerHTML = "<h2>French 75</h2><p>To the shaker, add 15ml simple syrup, 30ml lemon juice, 45ml gin, and ice. Shake until all cold (around 30s). Strain into a glass with ice then top with prosecco and stir gently. Please remember to rinse everything after use.</p>";
+            } else if (drink === 'french75') {
+                modalText.innerHTML = "<h2>French 75</h2><p>To the shaker, add 15ml simple syrup, 30ml lemon juice, 45ml gin, and ice. Shake until all cold (around 30s). Strain into a glass with ice then top with prosecco (around 75ml) and stir gently. Please remember to rinse everything after use.</p>";
+            } else if (drink === 'gin-rickey') {
+                modalText.innerHTML = "<h2>Gin rickey</h2><p>To a glass, add 15ml lime juice, 45ml gin (or bourbon), and ice. Top with soda water, then stir gently. Serve.</p>";
+            } else if (drink === 'mojito') {
+                modalText.innerHTML = "<h2>Mojito</h2><p>To a glass, add 15ml mint syrup, 22.5ml lime juice, 60ml rum, and ice. Top with soda water, then stir gently. Serve.</p>";
             }
             modal.style.display = "block";
         }
