@@ -186,6 +186,10 @@
                 <div class="drink-description">Lemon juice, lime juice, sugar syrup, soda water</div>
             </div>
             <div class="drink" onclick="openModal('orgeat-lemonade')">
+                <div class="clickable-drink-name">Orgeat lemonade</div>
+                <div class="drink-description">Lemon juice, orgeat (almond syrup), lemonade</div>
+            </div>
+            <div class="drink" onclick="openModal('grenadine-spritzer')">
                 <div class="clickable-drink-name">Grenadine spritzer</div>
                 <div class="drink-description">Lime juice, grenadine, tonic water</div>
             </div>
@@ -230,9 +234,11 @@
             var modalText = document.getElementById("modalText");
             if (drink === 'shirley-temple') {
                 modalText.innerHTML = "<h2>Shirley Temple</h2><p>Add 15ml grenadine to a glass of lemonade water and ice. Mix and serve.</p>";
-            } else if (drink === 'lemon-lime-cooler') {
-                modalText.innerHTML = "<h2>Lemon lime cooler</h2><p>Add 15ml lemon juice, 15ml lime juice, and 15ml simple syrup to a glass of soda water and ice. Mix and serve.</p>";
             } else if (drink === 'orgeat-lemonade') {
+                modalText.innerHTML = "<h2>Orgeat lemonade</h2><p>Add 30ml lemon juice and 15ml orgeat to a glass of lemonade and ice. Mix and serve.</p>";
+            }  else if (drink === 'lemon-lime-cooler') {
+                modalText.innerHTML = "<h2>Lemon lime cooler</h2><p>Add 15ml lemon juice, 15ml lime juice, and 15ml simple syrup to a glass of soda water and ice. Mix and serve.</p>";
+            } else if (drink === 'grenadine-spritzer') {
                 modalText.innerHTML = "<h2>Grenadine spritzer</h2><p>Add 30ml lemon juice and 15ml grenadine to a glass of tonic water and ice. Mix and serve.</p>";
             } else if (drink === 'whiskey-sour') {
                 modalText.innerHTML = "<h2>Whiskey sour</h2><p>To the shaker, add 15ml demerara syrup, 22.5ml lemon juice, 60ml boubon. If using egg white, add one egg white now and 'dry shake' for a few seconds to aerate the egg. In either case, now add ice and shake until all cold (around 30s). Strain into a glass with ice. Please remember to rinse everything after use.</p>";
